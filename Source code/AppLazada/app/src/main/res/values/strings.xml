@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AppLazada</string>
+    <string name="icon_bag_intro">icon Bag Intro</string>
+    <string name="icon_money_intro">Icon Money intro</string>
+    <string name="icon_security_intro">Icon Security Intro</string>
+    <string name="text_intro_shopping">Thế giới mua sắm trong tầm tay bạn</string>
+    <string name="text_intro_delivery">Giao hàng tận nơi thanh toán dễ dàng</string>
+    <string name="text_intro_security">100% bảo vệ người tiêu dùng</string>
+    <string name="logo_description">Logo Lazada</string>
+    <string name="text_content_search">Tìm kiếm trên Lazada</string>
+    <string name="image_button_description">Image Button</string>
+    <string name="title_item_menu_trangchu_search">search</string>
+    <string name="title_item_menu_trangchu_cart">cart</string>
+    <string name="icon_cart_item_menu">icon cart item menu</string>
+    <string name="text_cart">1</string>
+    <string name="title_item_menu_three_dots">three dots</string>
+    <string name="title_item_menu_login">Đăng nhập</string>
+    <string name="title_item_menu_notification">Thông báo</string>
+    <string name="title_item_menu_favorite">Danh sách mong muốn</string>
+    <string name="title_item_menu_mycart">Đơn hàng của tui</string>
+    <string name="title_item_menu_setting">Cài đặt</string>
+    <string name="title_item_menu_policy">Chính sách</string>
+    <string name="title_item_menu_help">Trợ giúp</string>
+    <string name="title_empty"/>
+    <string name="open">Mở</string>
+    <string name="close">Đóng</string>
+</resources>
