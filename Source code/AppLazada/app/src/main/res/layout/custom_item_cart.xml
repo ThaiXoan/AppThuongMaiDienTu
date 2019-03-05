@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/background_toolbar"
-    >
+    android:background="@color/background_toolbar">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:contentDescription="@string/icon_cart_item_menu"
-        android:src="@drawable/ic_shopping_cart_white_24dp"
-        />
+        android:src="@drawable/ic_shopping_cart_white_24dp" />
+
     <TextView
         android:layout_width="15dp"
         android:layout_height="15dp"
@@ -21,6 +19,5 @@
         android:gravity="center"
         android:text="@string/text_cart"
         android:textColor="@color/white_color"
-        android:textSize="@dimen/sp_10"
-        />
+        android:textSize="@dimen/sp_10" />
 </FrameLayout>

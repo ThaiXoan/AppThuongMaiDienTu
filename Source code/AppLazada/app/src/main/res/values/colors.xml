@@ -9,4 +9,6 @@
     <color name="yellow_900">#f67122</color>
     <color name="gray">#ccc</color>
     <color name="black">#302c2c</color>
+    <color name="facebook">#FD4A6EC9</color>
+    <color name="google">#DA4838</color>
 </resources>

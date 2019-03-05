@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundplashscreen"
-    >
+    android:background="@drawable/backgroundplashscreen">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/transparent_black"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dp_100"
             android:contentDescription="@string/icon_bag_intro"
-            android:src="@drawable/iconbag"
-            />
+            android:src="@drawable/iconbag" />
+
         <TextView
             android:layout_width="@dimen/dp_200"
             android:layout_height="wrap_content"
@@ -27,16 +26,16 @@
             android:maxLines="2"
             android:text="@string/text_intro_shopping"
             android:textColor="@color/white_color"
-            android:textSize="@dimen/sp_18"
-            />
+            android:textSize="@dimen/sp_18" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dp_20"
             android:contentDescription="@string/icon_money_intro"
-            android:src="@drawable/iconmoney"
-            />
+            android:src="@drawable/iconmoney" />
+
         <TextView
             android:layout_width="@dimen/dp_200"
             android:layout_height="wrap_content"
@@ -45,16 +44,16 @@
             android:maxLines="2"
             android:text="@string/text_intro_delivery"
             android:textColor="@color/white_color"
-            android:textSize="@dimen/sp_18"
-            />
+            android:textSize="@dimen/sp_18" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dp_20"
             android:contentDescription="@string/icon_security_intro"
-            android:src="@drawable/iconsercurity"
-            />
+            android:src="@drawable/iconsercurity" />
+
         <TextView
             android:layout_width="@dimen/dp_200"
             android:layout_height="wrap_content"
@@ -63,8 +62,7 @@
             android:maxLines="2"
             android:text="@string/text_intro_security"
             android:textColor="@color/white_color"
-            android:textSize="@dimen/sp_18"
-            />
+            android:textSize="@dimen/sp_18" />
 
     </LinearLayout>
 
@@ -74,6 +72,5 @@
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="@dimen/dp_20"
         android:contentDescription="@string/logo_description"
-        android:src="@drawable/lazadacustomerlogo"
-        />
+        android:src="@drawable/lazadacustomerlogo" />
 </FrameLayout>

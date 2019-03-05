@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/background_toolbar</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/yellow_900</item>
     </style>
@@ -15,6 +15,10 @@
     <style name="menuItemColor" parent="AppTheme">
         <item name="android:textColorPrimary">@color/black</item>
         <item name="drawerArrowStyle">@style/chageColorDrawertoogle</item>
+    </style>
+
+    <style name="menuItemColorWhite" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/white_color</item>
     </style>
 
     <style name="chageColorDrawertoogle" parent="Widget.AppCompat.DrawerArrowToggle">
