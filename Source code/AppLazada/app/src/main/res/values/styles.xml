@@ -24,4 +24,8 @@
     <style name="chageColorDrawertoogle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/white_color</item>
     </style>
+    
+    <declare-styleable name="PasswordEditText">
+        <attr name="useHint" format="boolean"/>
+    </declare-styleable>
 </resources>
