@@ -13,14 +13,18 @@
             android:name=".views.manHinhChao.ManHinhChaoActivity"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".views.trangChu.TrangChuActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".views.DangNhap.DangNhapActivity"
+            android:screenOrientation="portrait"
+            android:label="Đăng nhập/Đăng ký">
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package it.dut.thaixoan.applazada.views.trangChu.fragment;
+package it.dut.thaixoan.applazada.views.DangNhap.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,14 +10,13 @@ import android.view.ViewGroup;
 
 import it.dut.thaixoan.applazada.R;
 
-public class FragmentMeVaBe extends Fragment {
+public class FragmentDangNhap extends Fragment {
     View view;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_mevabe, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_dangnhap, container, false);
         return view;
     }
 }

@@ -1,66 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerlayout_trangchu"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:id="@+id/framelayout_trangchu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:context=".views.trangChu.TrangChuActivity"
-            tools:ignore="UselessParent"
-            >
+            tools:ignore="UselessParent">
 
             <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/background_toolbar"
-                >
+                android:background="@color/background_toolbar">
+
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar_trangchu"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:theme="@style/menuItemColor"
-                    app:logo="@mipmap/logo"
-                    />
+                    app:logo="@mipmap/logo" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dp_10"
                     android:background="@drawable/background_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:layout_marginLeft="@dimen/dp_10"
                         android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
                         android:background="@color/white_color"
-                        android:drawableLeft="@drawable/ic_search_black_24dp"
                         android:drawableStart="@drawable/ic_search_black_24dp"
+                        android:drawableLeft="@drawable/ic_search_black_24dp"
                         android:text="@string/text_content_search"
                         android:textAlignment="textStart"
-                        android:textAllCaps="false"
-                        />
+                        android:textAllCaps="false" />
+
                     <TextView
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="@dimen/dp_10"
                         android:layout_marginTop="@dimen/dp_10"
-                        android:background="@color/background_toolbar"
-                        />
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:background="@color/background_toolbar" />
+
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -68,35 +65,33 @@
                         android:layout_margin="@dimen/dp_10"
                         android:background="@color/white_color"
                         android:contentDescription="@string/image_button_description"
-                        android:src="@drawable/ic_photo_camera_black_24dp"
-                        />
+                        android:src="@drawable/ic_photo_camera_black_24dp" />
                 </LinearLayout>
+
                 <android.support.design.widget.TabLayout
                     android:id="@+id/tablayout_trangchu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:tabMode="scrollable"
                     app:tabTextAppearance="@style/customTitleOfTablayout"
-                    app:tabTextColor="@color/gray"
-                    >
+                    app:tabTextColor="@color/gray">
 
                 </android.support.design.widget.TabLayout>
             </android.support.design.widget.AppBarLayout>
+
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewpager_trangchu"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-            </android.support.v4.view.ViewPager>
+                android:layout_height="match_parent"></android.support.v4.view.ViewPager>
         </LinearLayout>
     </FrameLayout>
+
     <ExpandableListView
         android:id="@+id/expanable_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/white_color"
-        >
+        android:background="@color/white_color">
 
     </ExpandableListView>
 </android.support.v4.widget.DrawerLayout>
