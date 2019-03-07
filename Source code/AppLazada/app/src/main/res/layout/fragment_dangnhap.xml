@@ -11,11 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_10">
 
-        <EditText
+        <it.dut.thaixoan.applazada.customview.ClearEditText
+            android:id="@+id/edit_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_email"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/hint_email" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -24,15 +24,15 @@
         android:layout_margin="@dimen/dp_10">
 
         <it.dut.thaixoan.applazada.customview.PasswordEditText
+            android:id="@+id/edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_password"
-            app:useHint="true"
-            android:inputType="textPassword"
-            />
+            app:useHint="true" />
     </android.support.design.widget.TextInputLayout>
 
     <TextView
+        android:id="@+id/text_forgot_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_10"
@@ -41,6 +41,7 @@
         android:textColor="@color/colorPrimaryDark" />
 
     <Button
+        android:id="@+id/button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_10"
@@ -62,32 +63,36 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/button_login_facebook"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/dp_10"
             android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
             android:layout_weight="1"
             android:background="@drawable/custom_button_fb_dangnhap"
+            android:drawableStart="@drawable/facebook"
             android:drawableLeft="@drawable/facebook"
             android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
             android:text="@string/title_facebook"
-            android:textColor="@color/facebook"
-            android:drawableStart="@drawable/facebook"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textColor="@color/facebook" />
 
         <Button
+            android:id="@+id/button_login_google"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
             android:layout_weight="1"
             android:background="@drawable/custom_button_gg_dangnhap"
+            android:drawableStart="@drawable/google"
             android:drawableLeft="@drawable/google"
             android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
             android:text="@string/title_google"
-            android:textColor="@color/google"
-            android:drawableStart="@drawable/google"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:textColor="@color/google" />
 
     </LinearLayout>
 </LinearLayout>

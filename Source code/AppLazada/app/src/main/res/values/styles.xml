@@ -25,7 +25,7 @@
         <item name="color">@color/white_color</item>
     </style>
     
-    <declare-styleable name="PasswordEditText">
+    <declare-styleable name="passwordEditText">
         <attr name="useHint" format="boolean"/>
     </declare-styleable>
 </resources>
