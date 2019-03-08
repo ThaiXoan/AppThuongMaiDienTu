@@ -21,6 +21,7 @@ import com.facebook.login.LoginResult;
 import java.util.Arrays;
 
 import it.dut.thaixoan.applazada.R;
+import it.dut.thaixoan.applazada.views.trangChu.TrangChuActivity;
 
 public class FragmentDangNhap extends Fragment implements View.OnClickListener {
 
@@ -38,7 +39,8 @@ public class FragmentDangNhap extends Fragment implements View.OnClickListener {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Log.d(TAG, "onSuccess: ");
+                Intent intent = new Intent(getContext(), TrangChuActivity.class);
+                startActivity(intent);
             }
 
             @Override
@@ -48,7 +50,7 @@ public class FragmentDangNhap extends Fragment implements View.OnClickListener {
 
             @Override
             public void onError(FacebookException error) {
-                Log.d(TAG, "onError: ");
+                Log.d(TAG, "onError: " + error);
             }
         });
 
@@ -65,6 +67,6 @@ public class FragmentDangNhap extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        LoginManager.getInstance().logInWithReadPermissions(FragmentDangNhap.this, Arrays.asList("public_profile"));
+        LoginManager.getInstance().logInWithReadPermissions(FragmentDangNhap.this, Arrays.asList("public_profile", "email"));
     }
 }

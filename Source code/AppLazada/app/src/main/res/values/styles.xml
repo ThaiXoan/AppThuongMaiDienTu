@@ -27,5 +27,6 @@
     
     <declare-styleable name="passwordEditText">
         <attr name="useHint" format="boolean"/>
+        <attr name="useValidate" format="boolean"/>
     </declare-styleable>
 </resources>

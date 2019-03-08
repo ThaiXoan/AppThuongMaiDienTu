@@ -4,20 +4,28 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatEditText;
 import android.text.InputType;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 
 import it.dut.thaixoan.applazada.R;
 
 
 public class PasswordEditText extends android.support.v7.widget.AppCompatEditText {
 
+    public static final String TAG = "PasswordEditText";
     Drawable eye;
     Drawable eyeHint;
     Boolean visible = false;
     Boolean useHint = false;
+    Boolean useValidate = false;
     Drawable myDrawable;
     int ALPHA = (int) (255 * .70f);
 
@@ -40,9 +48,26 @@ public class PasswordEditText extends android.support.v7.widget.AppCompatEditTex
         if (attrs != null) {
             TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.passwordEditText, 0, 0);
             this.useHint = typedArray.getBoolean(R.styleable.passwordEditText_useHint, false);
+            this.useValidate = typedArray.getBoolean(R.styleable.passwordEditText_useValidate, false);
         }
         eye = ContextCompat.getDrawable(getContext(), R.drawable.eye_show);
         eyeHint = ContextCompat.getDrawable(getContext(), R.drawable.eye_hide);
+
+        if (this.useValidate){
+            setOnFocusChangeListener(new OnFocusChangeListener() {
+                @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus){
+                        String pass = getText().toString();
+                        TextInputLayout textInputLayout = (TextInputLayout) v.getParentForAccessibility();
+                        textInputLayout.setErrorEnabled(true);
+                        textInputLayout.setError("loi roi");
+                        Log.d(TAG, "onFocusChange: " + pass);
+                    }
+                }
+            });
+        }
         cauHinh();
     }
 
