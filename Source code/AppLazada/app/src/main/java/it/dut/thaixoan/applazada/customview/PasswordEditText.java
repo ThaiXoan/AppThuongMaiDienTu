@@ -1,4 +1,92 @@
 package it.dut.thaixoan.applazada.customview;
 
-public class PasswordEditText {
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.TextInputLayout;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatEditText;
+import android.text.InputType;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+
+import it.dut.thaixoan.applazada.R;
+
+
+public class PasswordEditText extends android.support.v7.widget.AppCompatEditText {
+
+    public static final String TAG = "PasswordEditText";
+    Drawable eye;
+    Drawable eyeHint;
+    Boolean visible = false;
+    Boolean useHint = false;
+    Boolean useValidate = false;
+    Drawable myDrawable;
+    int ALPHA = (int) (255 * .70f);
+
+    public PasswordEditText(Context context) {
+        super(context);
+        khoiTao(null);
+    }
+
+    public PasswordEditText(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        khoiTao(attrs);
+    }
+
+    public PasswordEditText(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        khoiTao(attrs);
+    }
+
+    private void khoiTao(AttributeSet attrs) {
+        if (attrs != null) {
+            TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.passwordEditText, 0, 0);
+            this.useHint = typedArray.getBoolean(R.styleable.passwordEditText_useHint, false);
+            this.useValidate = typedArray.getBoolean(R.styleable.passwordEditText_useValidate, false);
+        }
+        eye = ContextCompat.getDrawable(getContext(), R.drawable.eye_show);
+        eyeHint = ContextCompat.getDrawable(getContext(), R.drawable.eye_hide);
+
+        if (this.useValidate){
+            setOnFocusChangeListener(new OnFocusChangeListener() {
+                @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (!hasFocus){
+                        String pass = getText().toString();
+                        TextInputLayout textInputLayout = (TextInputLayout) v.getParentForAccessibility();
+                        textInputLayout.setErrorEnabled(true);
+                        textInputLayout.setError("loi roi");
+                        Log.d(TAG, "onFocusChange: " + pass);
+                    }
+                }
+            });
+        }
+        cauHinh();
+    }
+
+    private void cauHinh() {
+        setInputType(InputType.TYPE_CLASS_TEXT | (visible ? InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD : InputType.TYPE_TEXT_VARIATION_PASSWORD));
+        Drawable[] drawables = getCompoundDrawables();
+        myDrawable = (useHint && !visible) ? eyeHint : eye;
+        myDrawable.setAlpha(ALPHA);
+        setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], myDrawable, drawables[3]);
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN && event.getX() >= (getRight() - myDrawable.getBounds().width())) {
+            visible = !visible;
+            cauHinh();
+            invalidate();
+        }
+        return super.onTouchEvent(event);
+    }
 }

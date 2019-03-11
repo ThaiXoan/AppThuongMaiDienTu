@@ -29,9 +29,9 @@ public class TrangChuActivity extends AppCompatActivity {
     private void addControls() {
 
         Toolbar mToolbarTrangchu = findViewById(R.id.toolbar_trangchu);
-        TabLayout mTabLayoutTrangChu = findViewById(R.id.tablayout_trangchu);
-        ViewPager mViewPagerTrangChu = findViewById(R.id.viewpager_trangchu);
-        DrawerLayout mDrawerLayoutTrangChu = findViewById(R.id.drawerlayout_trangchu);
+        TabLayout mTabLayoutTrangChu = findViewById(R.id.tab_layout_trangchu);
+        ViewPager mViewPagerTrangChu = findViewById(R.id.view_pager_trangchu);
+        DrawerLayout mDrawerLayoutTrangChu = findViewById(R.id.drawer_layout_trangchu);
 
         mToolbarTrangchu.setTitle(R.string.title_empty);
         setSupportActionBar(mToolbarTrangchu);
