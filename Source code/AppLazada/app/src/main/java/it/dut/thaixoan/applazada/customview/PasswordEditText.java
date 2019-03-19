@@ -8,26 +8,30 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatEditText;
 import android.text.InputType;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import it.dut.thaixoan.applazada.R;
 
 
 public class PasswordEditText extends android.support.v7.widget.AppCompatEditText {
 
-    public static final String TAG = "PasswordEditText";
-    Drawable eye;
-    Drawable eyeHint;
-    Boolean visible = false;
-    Boolean useHint = false;
-    Boolean useValidate = false;
-    Drawable myDrawable;
-    int ALPHA = (int) (255 * .70f);
+    public static final String TITLE_ERROR = "Mật khẩu gồm ít nhất 6 ký tự và 1 chữ hoa!";
+    public static final String MATCHER_PATTERN = "((?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{6,20})";
+    public static int ALPHA = (int) (255 * .70f);
+    private Drawable eye;
+    private Drawable eyeHint;
+    private Boolean visible = false;
+    private Boolean useHint = false;
+    private Boolean useValidate = false;
+    private Drawable myDrawable;
+    private Pattern pattern;
+    private Matcher matcher;
 
     public PasswordEditText(Context context) {
         super(context);
@@ -45,6 +49,7 @@ public class PasswordEditText extends android.support.v7.widget.AppCompatEditTex
     }
 
     private void khoiTao(AttributeSet attrs) {
+        this.pattern = Pattern.compile(MATCHER_PATTERN);
         if (attrs != null) {
             TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.passwordEditText, 0, 0);
             this.useHint = typedArray.getBoolean(R.styleable.passwordEditText_useHint, false);
@@ -53,17 +58,21 @@ public class PasswordEditText extends android.support.v7.widget.AppCompatEditTex
         eye = ContextCompat.getDrawable(getContext(), R.drawable.eye_show);
         eyeHint = ContextCompat.getDrawable(getContext(), R.drawable.eye_hide);
 
-        if (this.useValidate){
+        if (this.useValidate) {
             setOnFocusChangeListener(new OnFocusChangeListener() {
                 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                 @Override
                 public void onFocusChange(View v, boolean hasFocus) {
-                    if (!hasFocus){
+                    if (!hasFocus) {
                         String pass = getText().toString();
                         TextInputLayout textInputLayout = (TextInputLayout) v.getParentForAccessibility();
-                        textInputLayout.setErrorEnabled(true);
-                        textInputLayout.setError("loi roi");
-                        Log.d(TAG, "onFocusChange: " + pass);
+                        matcher = pattern.matcher(pass);
+                        if (matcher.matches()) {
+                            textInputLayout.setErrorEnabled(false);
+                        } else {
+                            textInputLayout.setErrorEnabled(true);
+                            textInputLayout.setError(TITLE_ERROR);
+                        }
                     }
                 }
             });
