@@ -17,7 +17,7 @@
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginTop="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
-            android:text="Cần điền tất cả các mục"
+            android:text="@string/title_register_description"
             android:textStyle="bold" />
 
         <android.support.design.widget.TextInputLayout
@@ -30,7 +30,7 @@
                 android:id="@+id/edit_full_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Họ tên đầy đủ" />
+                android:hint="@string/hint_full_name" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -43,7 +43,7 @@
                 android:id="@+id/edit_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Địa chỉ Email" />
+                android:hint="@string/hint_email_address" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_10"
-            android:text="Mật khẩu phải bao gồm ít nhất 6 ký tự và 1 chữ hoa"/>
+            android:text="@string/title_note_pass"/>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_confirm_password"
@@ -77,7 +77,7 @@
                 android:id="@+id/edit_confirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nhập lại mật khẩu"
+                android:hint="@string/hint_confirm_pass"
                 app:useHint="true" />
         </android.support.design.widget.TextInputLayout>
 
@@ -85,7 +85,7 @@
             android:layout_margin="@dimen/dp_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tôi muốn nhận các khuyến mại độc quyền qua Email"
+            android:text="@string/title_notification"
             android:padding="@dimen/dp_5"
             android:checked="true"/>
 
@@ -95,11 +95,11 @@
             android:layout_margin="@dimen/dp_10"
             android:background="@color/yellow_900"
             android:textColor="@color/white_color"
-            android:text="Đăng ký"/>
+            android:text="@string/button_register"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chúng tôi đã hiểu rõ các điều khoản bảo mật của Lazada"
+            android:text="@string/title_rules"
             android:layout_margin="@dimen/dp_10"/>
 
         <TextView
@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_10"
             android:gravity="center"
-            android:text="Hoặc đăng ký bằng" />
+            android:text="@string/title_option_register" />
 
         <LinearLayout
             android:layout_width="match_parent"

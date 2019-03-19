@@ -32,4 +32,13 @@
     <string name="title_facebook">Facebook</string>
     <string name="title_google">Google</string>
     <string name="facebook_app_id">402211650336004</string>
+    <string name="title_register_description">Cần điền tất cả các mục</string>
+    <string name="hint_full_name">Họ tên đầy đủ</string>
+    <string name="hint_email_address">Địa chỉ Email</string>
+    <string name="title_note_pass">Mật khẩu phải bao gồm ít nhất 6 ký tự và 1 chữ hoa</string>
+    <string name="hint_confirm_pass">Nhập lại mật khẩu</string>
+    <string name="title_notification">Tôi muốn nhận các khuyến mại độc quyền qua Email</string>
+    <string name="title_rules">Chúng tôi đã hiểu rõ các điều khoản bảo mật của Lazada</string>
+    <string name="button_register">Đăng ký</string>
+    <string name="title_option_register">Hoặc đăng ký bằng</string>
 </resources>
