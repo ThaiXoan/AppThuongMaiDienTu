@@ -89,7 +89,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/white_color">
+        android:background="@color/white_color"
+        android:groupIndicator="@null">
 
     </ExpandableListView>
 </android.support.v4.widget.DrawerLayout>
