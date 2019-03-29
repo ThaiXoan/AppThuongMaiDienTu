@@ -10,13 +10,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ExpandableListView;
+
+import java.util.List;
 
 import it.dut.thaixoan.applazada.R;
+import it.dut.thaixoan.applazada.adapter.ExpanableAdapter;
 import it.dut.thaixoan.applazada.adapter.ViewPagerAdapter;
+import it.dut.thaixoan.applazada.models.object_class.LoaiSanPham;
+import it.dut.thaixoan.applazada.presenters.trangchu.xulymenu.PresenterLogicXuLyMenu;
 import it.dut.thaixoan.applazada.views.DangNhap.DangNhapActivity;
 
-public class TrangChuActivity extends AppCompatActivity {
+public class TrangChuActivity extends AppCompatActivity implements ViewXuLyMenu{
 
+    private ExpandableListView mExpandableListView;
     private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
@@ -32,6 +39,7 @@ public class TrangChuActivity extends AppCompatActivity {
         TabLayout mTabLayoutTrangChu = findViewById(R.id.tab_layout_trangchu);
         ViewPager mViewPagerTrangChu = findViewById(R.id.view_pager_trangchu);
         DrawerLayout mDrawerLayoutTrangChu = findViewById(R.id.drawer_layout_trangchu);
+        mExpandableListView = findViewById(R.id.expanable_menu);
 
         mToolbarTrangchu.setTitle(R.string.title_empty);
         setSupportActionBar(mToolbarTrangchu);
@@ -46,6 +54,9 @@ public class TrangChuActivity extends AppCompatActivity {
         ViewPagerAdapter mAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         mViewPagerTrangChu.setAdapter(mAdapter);
         mTabLayoutTrangChu.setupWithViewPager(mViewPagerTrangChu);
+
+        PresenterLogicXuLyMenu logicXuLyMenu = new PresenterLogicXuLyMenu(this);
+        logicXuLyMenu.layDanhSachMenu();
 
 
     }
@@ -69,5 +80,13 @@ public class TrangChuActivity extends AppCompatActivity {
             }
         }
         return true;
+    }
+
+    @Override
+    public void hienThiDanhSachMenu(List<LoaiSanPham> loaiSanPhams) {
+
+        ExpanableAdapter adapter = new ExpanableAdapter(this, loaiSanPhams);
+        mExpandableListView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 }
