@@ -1,4 +1,4 @@
-package it.dut.thaixoan.applazada.views.DangNhap;
+package it.dut.thaixoan.applazada.views.dangnhap_dangky;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

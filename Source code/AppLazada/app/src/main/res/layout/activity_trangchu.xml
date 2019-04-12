@@ -41,10 +41,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:layout_marginStart="@dimen/dp_10"
-                        android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@color/white_color"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:background="@drawable/selector_background_button_search"
                         android:drawableStart="@drawable/ic_search_black_24dp"
                         android:drawableLeft="@drawable/ic_search_black_24dp"
                         android:text="@string/text_content_search"
@@ -57,13 +56,12 @@
                         android:layout_marginTop="@dimen/dp_10"
                         android:layout_marginBottom="@dimen/dp_10"
                         android:background="@color/background_toolbar" />
-
                     <ImageButton
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/dp_10"
-                        android:background="@color/white_color"
+                        android:background="@drawable/selector_background_camera_search"
                         android:contentDescription="@string/image_button_description"
                         android:src="@drawable/ic_photo_camera_black_24dp" />
                 </LinearLayout>

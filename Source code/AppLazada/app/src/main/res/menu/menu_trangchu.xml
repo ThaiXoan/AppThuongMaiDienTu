@@ -54,6 +54,12 @@
                 android:title="@string/title_item_menu_help"
                 android:icon="@drawable/ic_item_menu_help"
                 />
+            <item
+                android:id="@+id/item_logout"
+                android:title="@string/title_item_menu_logout"
+                android:icon="@drawable/ic_logout"
+                android:visible="false"
+                />
         </menu>
     </item>
 </menu>

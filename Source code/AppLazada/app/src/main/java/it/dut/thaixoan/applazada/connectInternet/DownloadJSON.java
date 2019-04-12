@@ -94,6 +94,7 @@ public class DownloadJSON extends AsyncTask<String, Void, String> {
             Uri.Builder builder = new Uri.Builder();
             int count = attribute.size();
             for (int i = 0; i < count; i++) {
+
                 for (Map.Entry<String, String> values : attribute.get(i).entrySet()) {
                     key = values.getKey();
                     value = values.getValue();
@@ -109,8 +110,8 @@ public class DownloadJSON extends AsyncTask<String, Void, String> {
             assert query != null;
             bufferedWriter.write(query);
             bufferedWriter.flush();
-
             bufferedWriter.close();
+
             outputStreamWriter.close();
             outputStream.close();
             data = methodGet(httpURLConnection);

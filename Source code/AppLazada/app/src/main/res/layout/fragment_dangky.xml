@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v4.widget.NestedScrollView
-    android:layout_height="wrap_content"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,14 +58,14 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_password"
                 app:useHint="true"
-                app:useValidate="true"/>
+                app:useValidate="true" />
         </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_10"
-            android:text="@string/title_note_pass"/>
+            android:text="@string/title_note_pass" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_confirm_password"
@@ -82,25 +82,28 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.SwitchCompat
-            android:layout_margin="@dimen/dp_10"
+            android:id="@+id/switch_nhan_khuyen_mai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_notification"
+            android:layout_margin="@dimen/dp_10"
+            android:checked="true"
             android:padding="@dimen/dp_5"
-            android:checked="true"/>
+            android:text="@string/title_notification" />
 
         <Button
+            android:id="@+id/button_dang_ky"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_10"
             android:background="@color/yellow_900"
-            android:textColor="@color/white_color"
-            android:text="@string/button_register"/>
+            android:text="@string/button_register"
+            android:textColor="@color/white_color" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_rules"
-            android:layout_margin="@dimen/dp_10"/>
+            android:layout_margin="@dimen/dp_10"
+            android:text="@string/title_rules" />
 
         <TextView
             android:layout_width="match_parent"

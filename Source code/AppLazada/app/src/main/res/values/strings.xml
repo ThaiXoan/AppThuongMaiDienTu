@@ -21,6 +21,7 @@
     <string name="title_item_menu_setting">Cài đặt</string>
     <string name="title_item_menu_policy">Chính sách</string>
     <string name="title_item_menu_help">Trợ giúp</string>
+    <string name="title_item_menu_logout">Đăng xuất</string>
     <string name="title_empty" />
     <string name="open">Mở</string>
     <string name="close">Đóng</string>
@@ -41,4 +42,14 @@
     <string name="title_rules">Chúng tôi đã hiểu rõ các điều khoản bảo mật của Lazada</string>
     <string name="button_register">Đăng ký</string>
     <string name="title_option_register">Hoặc đăng ký bằng</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="input_ho_ten_empty_error">Vui lòng nhập họ và tên!</string>
+    <string name="input_email_empty_error">Vui lòng nhập Email!</string>
+    <string name="input_email_matcher_error">Email không hợp lệ!</string>
+    <string name="input_password_empty_error">Vui lòng nhập mật khẩu!</string>
+    <string name="input_password_mathcher_error">Mật khẩu gồm ít nhất 6 ký tự và 1 chữ hoa!</string>
+    <string name="input_confirmpass_empty_error">Vui lòng nhập lại mật khẩu!</string>
+    <string name="input_confirmpass_enter_not_maping_error">Mật khẩu nhập lại không trùng khớp!</string>
+    <string name="login_failed">Email hoặc mật khẩu không đúng!</string>
 </resources>

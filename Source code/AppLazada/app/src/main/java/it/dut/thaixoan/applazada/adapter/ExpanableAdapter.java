@@ -3,8 +3,10 @@ package it.dut.thaixoan.applazada.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Point;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -78,31 +80,55 @@ public class ExpanableAdapter extends BaseExpandableListAdapter {
         return false;
     }
 
+    public class ViewHolderMenu {
+        TextView textViewTenLoaiSanPham;
+        ImageView imageIconAddOrRemove;
+    }
+
     @Override
-    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+    public View getGroupView(final int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        assert layoutInflater != null;
-        View view = layoutInflater.inflate(R.layout.custom_layout_group_view, parent, false);
+        View view = convertView;
+        ViewHolderMenu viewHolderMenu;
+        if (view == null) {
+            viewHolderMenu = new ViewHolderMenu();
+            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            assert layoutInflater != null;
+            view = layoutInflater.inflate(R.layout.custom_layout_group_view, parent, false);
+            viewHolderMenu.textViewTenLoaiSanPham = view.findViewById(R.id.text_view_ten_loai_san_pham);
+            viewHolderMenu.imageIconAddOrRemove = view.findViewById(R.id.image_icon_add_or_remove);
+            view.setTag(viewHolderMenu);
 
-        TextView textViewTenLoaiSanPham = view.findViewById(R.id.text_view_ten_loai_san_pham);
-        ImageView imageIconAddOrRemove = view.findViewById(R.id.image_icon_add_or_remove);
+        } else {
+            viewHolderMenu = (ViewHolderMenu) view.getTag();
+        }
 
-        textViewTenLoaiSanPham.setText(loaiSanPhams.get(groupPosition).getTenLoaiSanPham());
+        viewHolderMenu.textViewTenLoaiSanPham.setText(loaiSanPhams.get(groupPosition).getTenLoaiSanPham());
 
         boolean isChild = loaiSanPhams.get(groupPosition).getListCon().size() > 0;
 
         if (isChild) {
-            imageIconAddOrRemove.setVisibility(View.VISIBLE);
+            viewHolderMenu.imageIconAddOrRemove.setVisibility(View.VISIBLE);
         } else {
-            imageIconAddOrRemove.setVisibility(View.INVISIBLE);
+            viewHolderMenu.imageIconAddOrRemove.setVisibility(View.INVISIBLE);
         }
 
         if (isExpanded) {
-            imageIconAddOrRemove.setImageResource(R.drawable.ic_remove_black_24dp);
+            viewHolderMenu.imageIconAddOrRemove.setImageResource(R.drawable.ic_remove_black_24dp);
+            view.setBackgroundResource(R.color.gray);
         } else {
-            imageIconAddOrRemove.setImageResource(R.drawable.ic_add_black_24dp);
+            viewHolderMenu.imageIconAddOrRemove.setImageResource(R.drawable.ic_add_black_24dp);
+            view.setBackgroundResource(R.color.white_color);
         }
+
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Log.d("setOnTouchListener", " : " + loaiSanPhams.get(groupPosition).getTenLoaiSanPham() + " - " + loaiSanPhams.get(groupPosition).getMaLoaiSanPham());
+                return false;
+            }
+        });
+
         return view;
     }
 
